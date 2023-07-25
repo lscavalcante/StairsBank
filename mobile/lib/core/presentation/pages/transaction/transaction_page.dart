@@ -3,7 +3,8 @@ import 'package:stairsbank/core/presentation/theme/text_custom.dart';
 import 'package:stairsbank/core/presentation/theme/theme_colors.dart';
 import 'package:stairsbank/core/presentation/theme/theme_constants.dart';
 import 'package:stairsbank/core/shared/components/button/button.dart';
-import 'package:stairsbank/core/shared/components/options/option_operation.dart';
+import 'package:flutter/services.dart' as services;
+import 'package:stairsbank/core/shared/util/masks/money_text_input_formatter.dart';
 
 class TransactionPage extends StatefulWidget {
   const TransactionPage({super.key});
@@ -44,11 +45,16 @@ class _TransactionPageState extends State<TransactionPage> {
               ),
               TextFormField(
                 autofocus: true,
-                keyboardType: TextInputType.number,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 decoration: const InputDecoration(
                   labelText: "How much do you want to transfer?",
                   hintText: "How much do you want to transfer?",
                 ),
+                inputFormatters: [
+                  services.FilteringTextInputFormatter.digitsOnly,
+                  CurrencyInputFormatter()
+                ],
               ),
               TextFormField(
                 autofocus: true,
