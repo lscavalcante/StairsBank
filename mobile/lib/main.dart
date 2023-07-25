@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stairsbank/core/presentation/pages/login/login_page.dart';
-import 'package:stairsbank/core/presentation/pages/splash/splash_page.dart';
 import 'package:stairsbank/core/presentation/theme/theme_colors.dart';
 import 'package:stairsbank/core/shared/constants/font_family_constants.dart';
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'StairsBank',
       theme: ThemeData(
         fontFamily: FontFamilyConstants.poppins,
         colorScheme: ColorScheme.fromSeed(

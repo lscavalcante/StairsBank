@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stairsbank/core/presentation/theme/spaces.dart';
 import 'package:stairsbank/core/presentation/theme/text_custom.dart';
 import 'package:stairsbank/core/presentation/theme/theme_colors.dart';
+import 'package:stairsbank/core/presentation/theme/theme_constants.dart';
 import 'package:stairsbank/core/shared/components/options/option_operation.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             Container(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(ThemeConstants.padding),
               height: 150,
               width: double.infinity,
               decoration: const BoxDecoration(
@@ -75,7 +77,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(ThemeConstants.padding),
                 child: SizedBox(
                   width: double.infinity,
                   child: Column(
@@ -85,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                         "Operations",
                         style: TextCustom(context).title,
                       ),
-                      const SizedBox(height: 8),
+                      const SpacerVertical.normal(),
                       SizedBox(
                         height: 70,
                         child: ListView.separated(
@@ -105,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                         "Recent Transactions",
                         style: TextCustom(context).title,
                       ),
-                      const SizedBox(height: 8),
+                      const SpacerVertical.normal(),
                       ListView.separated(
                         primary: false,
                         shrinkWrap: true,

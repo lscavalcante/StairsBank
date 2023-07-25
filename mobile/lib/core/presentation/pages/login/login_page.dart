@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stairsbank/core/presentation/pages/home/home_page.dart';
+import 'package:stairsbank/core/presentation/theme/spaces.dart';
 import 'package:stairsbank/core/presentation/theme/text_custom.dart';
 import 'package:stairsbank/core/presentation/theme/theme_colors.dart';
 import 'package:stairsbank/core/shared/components/button/button.dart';
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 },
               ),
-              const SizedBox(height: 8),
+              const SpacerVertical.normal(),
               Text.rich(
                 TextSpan(
                   text: "Don’t have an account? ",
@@ -69,13 +70,13 @@ class _LoginPageState extends State<LoginPage> {
                 "Login",
                 style: TextCustom(context).title,
               ),
-              const SizedBox(height: 8),
+              const SpacerVertical.normal(),
               Text(
                 "Set a name for your profile, here's the password",
                 style: TextCustom(context).info,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 8),
+              const SpacerVertical.normal(),
               TextFormField(
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
@@ -94,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: "Write your email...",
                 ),
               ),
-              const SizedBox(height: 8),
+              const SpacerVertical.normal(),
               TextFormField(
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
@@ -122,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextCustom(context).info,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SpacerVertical.normal(),
             ],
           ),
         ),
