@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 
 import java.util.HashSet;
 import java.util.List;
@@ -23,12 +25,9 @@ public class Role {
     @Column(nullable = false)
     private String name;
 
-//    @ManyToMany(mappedBy = "roles")
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "user_role",
-        joinColumns = @JoinColumn(name = "role_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
-    private Set<User> users = new HashSet<>();
+    public List<SimpleGrantedAuthority> getAuthorities() {
+        List<SimpleGrantedAuthority> authorities = new java.util.ArrayList<>(List.of());
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + this.getName()));
+        return authorities;
+    }
 }
